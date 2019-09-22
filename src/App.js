@@ -40,7 +40,7 @@ class App extends React.Component {
 
   render() {
     let Completez = this.state.completed === true ? <h2>Complete </h2> : '';
-    let Completez1 = this.state.completed === true ? <h2 onClick={this.again}>เล่นอีกรอบ!!! </h2> : '';
+    let Completez1 = this.state.completed === true ? <h2 onClick={this.again}>กดเพื่อเล่นอีกรอบ!!! </h2> : '';
     return (
       <div>
         {
