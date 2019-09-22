@@ -2,9 +2,9 @@ import React from 'react';
 import CharacterCard from './CharacterCard.js';
 import './App.css';
 import _ from 'lodash';
- 
+
 let message = 'Hello'
- 
+
 const prepareStateFromWord = (given_word) => {
   let word = given_word.toUpperCase()
   let chars = _.shuffle(Array.from(word))
@@ -16,11 +16,11 @@ const prepareStateFromWord = (given_word) => {
     completed: false
   }
 }
- 
+
 class App extends React.Component {
- 
+
   state = prepareStateFromWord(message);
- 
+
   activationHandler = (c) => {
     let guess = [...this.state.guess, c]
     this.setState({ guess })
@@ -32,8 +32,10 @@ class App extends React.Component {
       }
     }
   }
- 
+
+
   render() {
+    let Completez= this.state.completed === true ? <h2 class="Righteous2">Complete </h2> : '';
     return (
       <div>
         {
@@ -56,18 +58,17 @@ class App extends React.Component {
           ))
         }
         <div>Attemp {this.state.attempt}</div>
-        {
-          this.state.completed && <h4>Complete</h4>
-        }
+        <h4>{Completez}</h4>
 
-<h3>
-       Thodsapon Tantitham 6035512040
+
+        <h3>
+          Thodsapon Tantitham 6035512040
       </h3>
       </div>
-      
+
     )
-    
+
   }
 }
- 
+
 export default App;
