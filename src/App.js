@@ -32,10 +32,15 @@ class App extends React.Component {
       }
     }
   }
+  again = () => {
+    this.setState({ completed: false, attempt: this.state.attempt + 1, })
+  }
+
 
 
   render() {
-    let Completez= this.state.completed === true ? <h2 class="Righteous2">Complete </h2> : '';
+    let Completez = this.state.completed === true ? <h2 class="Righteous2">Complete </h2> : '';
+    let Completez1 = this.state.completed === true ? <h2 class="Righteous2" onClick={this.again}>เล่นอีกรอบ!!! </h2> : '';
     return (
       <div>
         {
@@ -43,6 +48,7 @@ class App extends React.Component {
             <CharacterCard
               value={item}
               key={index}
+              attempt={this.state.attempt}
               activationHandler={this.activationHandler}
             />
           ))
@@ -58,7 +64,7 @@ class App extends React.Component {
           ))
         }
         <div>Attemp {this.state.attempt}</div>
-        <h4>{Completez}</h4>
+        <h4>{Completez}{Completez1}</h4>
 
 
         <h3>

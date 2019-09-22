@@ -5,6 +5,7 @@ class CharacterCard extends React.Component {
     state = {
         active: false
     }
+    
  
     componentDidUpdate(prevProps){
         if(prevProps.attempt != this.props.attempt){
