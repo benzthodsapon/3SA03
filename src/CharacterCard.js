@@ -7,11 +7,6 @@ class CharacterCard extends React.Component {
     }
     
  
-    componentDidUpdate(prevProps){
-        if(prevProps.attempt != this.props.attempt){
-        this.setState({active: false})
-        }
-       }
     activate = () => {
         if(this.state.active==false){
         this.setState({active: !this.state.active});
