@@ -63,8 +63,7 @@ class App extends React.Component {
             />
           ))
         }
-        <div>Attemp {this.state.attempt}</div>
-        <h4>{Completez}{Completez1}</h4>
+        
 
 
         <h3>
