@@ -7,7 +7,7 @@ class CharacterCard extends React.Component {
     }
     
  
-    componentDidUpdate(prevProps){
+    componentDUpdate(prevProps){
         if(prevProps.attempt != this.props.attempt){
         this.setState({active: false})
         }
