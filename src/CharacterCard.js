@@ -6,12 +6,15 @@ class CharacterCard extends React.Component {
         active: false
     }
  
+    componentDidUpdate(prevProps){
+        if(prevProps.attempt != this.props.attempt){
+        this.setState({active: false})
+        }
+       }
     activate = () => {
-        this.setState({
-            active: !this.state.active
-        });
- 
-        this.props.activationHandler(this.props.value);
+        if(this.state.active==false){
+        this.setState({active: !this.state.active});
+        this.props.activationHandler(this.props.value);}
     }
  
     render() {
